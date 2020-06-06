@@ -10,7 +10,12 @@ import pandas as pd
 
 df = pd.read_csv("spi_matches.csv", sep = ",")
 
-print(df.head())
+#Change date to a date format
 
-print(df.describe())
+df['date'] = pd.to_datetime(df['date']).dt.date
 
+#Remove importance columns
+
+df = df.drop(['importance1', 'importance2'], 1)
+
+df = df.dropna()
