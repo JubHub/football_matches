@@ -20,4 +20,6 @@ df = df.drop(['importance1', 'importance2'], 1)
 
 df = df.dropna()
 
+df = df[(df.season != 2016) & (df.season != 2020)]
+
 df.to_csv('football_matches.csv', index = False)
