@@ -19,3 +19,5 @@ df['date'] = pd.to_datetime(df['date']).dt.date
 df = df.drop(['importance1', 'importance2'], 1)
 
 df = df.dropna()
+
+df.to_csv('football_matches.csv', index = False)
